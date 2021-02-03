@@ -24,6 +24,11 @@ public class Escolar extends DePasajeros{
         return lugarProyecto;
     }
     
+    @Override
+    public String toString() {
+        return "Escolar\n" + super.toString() + "LugarProyecto: " + lugarProyecto + "\n";
+    }
+    
     public double calculaCostoServicio() {
         return 0.0001 * costoCamion / totalPasaj * 250;
     }
