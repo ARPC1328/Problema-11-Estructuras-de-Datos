@@ -33,6 +33,10 @@ public abstract class Camion {
         return "Camion{" + "marca=" + marca + ", numMotor=" + numMotor + ", placas=" + placas + ", costoCamion=" + costoCamion + '}';
     }
 
+    public double getCostoCamion() {
+        return costoCamion;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;
