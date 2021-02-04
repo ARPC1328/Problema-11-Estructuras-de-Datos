@@ -72,7 +72,15 @@ public class EmpTransp {
         }
         return contador >= tCam;
     }
-    
+    public String camionDisponible(String placas){
+        int i = 0;
+        String res = "No se encontré un camión con esas placas";
+        while(i < totalCamiones && !camiones[i].getPlacas().equals(placas))
+            i++;
+        if(i != totalCamiones)
+            res = camiones[i].getClass().getSimpleName();
+        return res;
+    }
 
     /**
      * @param args the command line arguments
