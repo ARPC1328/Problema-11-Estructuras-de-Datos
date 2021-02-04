@@ -37,6 +37,10 @@ public abstract class Camion {
         return costoCamion;
     }
     
+    public String getPlacas() {
+        return placas;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;
