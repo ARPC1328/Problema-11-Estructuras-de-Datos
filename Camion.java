@@ -4,9 +4,7 @@
  * and open the template in the editor.
  */
 
-package ejercicio11;
-
-import java.util.Objects;
+package Ejercicio11;
 
 /**
  * 
@@ -21,26 +19,38 @@ public abstract class Camion {
     public Camion() {
     }
 
-    public Camion(String marca, String numMotor, String placas, double costoCamion) {
+    public Camion(String marca, String numMotor, String placas, 
+            double costoCamion) {
         this.marca = marca;
         this.numMotor = numMotor;
         this.placas = placas;
         this.costoCamion = costoCamion;
     }
 
-    @Override
-    public String toString() {
-        return "Camion{" + "marca=" + marca + ", numMotor=" + numMotor + ", placas=" + placas + ", costoCamion=" + costoCamion + '}';
-    }
-
     public double getCostoCamion() {
         return costoCamion;
     }
-    
+
     public String getPlacas() {
         return placas;
     }
-    
+
+    public String getMarca() {
+        return marca;
+    }
+          
+    @Override
+    public String toString(){
+        StringBuilder cad = new StringBuilder();
+        
+        cad.append("\nCamion de marca: " + marca);
+        cad.append("\nNumero de motor: " + numMotor);
+        cad.append("\nPlacas:  " +  placas);
+        cad.append("\nCosto del camion: " + costoCamion);
+        
+        return cad.toString();
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
@@ -53,8 +63,6 @@ public abstract class Camion {
         
         if (obj != null && obj instanceof Camion)
             res=this.placas.equalsIgnoreCase(((Camion)obj).placas);
-        return res;        
-        
+        return res;                
     }
 }
-  

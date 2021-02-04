@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package problema11;
+package Ejercicio11;
 
 /**
  *
- * @author Usuario
+ * @author Brayansito
  */
 public class Escolar extends DePasajeros{
     private boolean lugarProyecto;
@@ -15,8 +15,8 @@ public class Escolar extends DePasajeros{
     public Escolar() {
     }
 
-    public Escolar(String marca, String numMotor, String placas, double costoCamion, boolean disponible, int totalPasaj, boolean lugarProyecto) {
-        super(marca, numMotor, placas, costoCamion, disponible, totalPasaj);
+    public Escolar(String marca, String numMotor, String placas, double costoCamion, int totalPasaj, boolean lugarProyecto) {
+        super(marca, numMotor, placas, costoCamion, totalPasaj);
         this.lugarProyecto = lugarProyecto;
     }
 
@@ -24,12 +24,17 @@ public class Escolar extends DePasajeros{
         return lugarProyecto;
     }
     
+    public double calculaCostoServicio() {
+        return 0.0001 * super.getCostoCamion() / super.getTotPasajeros() * 250;
+    }
+
     @Override
     public String toString() {
-        return "Escolar\n" + super.toString() + "LugarProyecto: " + lugarProyecto + "\n";
-    }
-    
-    public double calculaCostoServicio() {
-        return 0.0001 * costoCamion / totalPasaj * 250;
-    }
+        StringBuilder cad = new StringBuilder();
+        
+        cad.append ("Escolor con lugar de proyecto: " + lugarProyecto);
+        cad.append (super.toString());
+        
+        return cad.toString();
+    }    
 }

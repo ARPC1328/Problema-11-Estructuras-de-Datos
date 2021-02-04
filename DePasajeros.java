@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Ejercicio11;
 
 public abstract class DePasajeros extends Camion {
@@ -7,7 +12,8 @@ public abstract class DePasajeros extends Camion {
     public DePasajeros() {
     }
 
-    public DePasajeros(String marca, String numMotor, String placas, double costoCamion, int totPasajeros) {
+    public DePasajeros(String marca, String numMotor, 
+            String placas, double costoCamion, int totPasajeros) {
         super (marca, numMotor, placas, costoCamion);
         this.totPasajeros = totPasajeros;
     }
@@ -22,7 +28,12 @@ public abstract class DePasajeros extends Camion {
     
     @Override
     public String toString() {
-        return "DePasajeros{" + "totPasajeros=" + totPasajeros + '}'; //super.toString();
+        StringBuilder cad = new StringBuilder();
+        
+        cad.append ("\nTotal pasajeros: " + totPasajeros);
+        cad.append (super.toString());
+        
+        return cad.toString();
     }
    
    public double calculaCostoServicio(double cantKilometros){
