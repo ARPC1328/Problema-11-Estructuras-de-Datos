@@ -81,6 +81,16 @@ public class EmpTransp {
             res = camiones[i].getClass().getSimpleName();
         return res;
     }
+    
+    public String camionEscolarDisponible() {
+        StringBuilder sb;
+        sb = new StringBuilder();
+        int i;
+        for(i = 0;i < totalCam;i++) 
+            if(camiones[i] instanceof Escolar && ((Escolar)camiones[i]).getTotalPasaj() > 20 && ((Escolar)camiones[i]).isLugarProyecto()) 
+                sb.append(camiones[i].getPlacas()).append("\n");
+        return sb.toString();
+    }
 
     /**
      * @param args the command line arguments
